@@ -118,3 +118,8 @@ info:
     description: "Actuator example"
     version: "1.0.0"
   organization: "Kyiv-Mohyla Academy"
+
+actuator:
+  admin:
+    username: ${ADMIN_USERNAME:admin}
+    password: ${ADMIN_PASS:admin123}
