@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: ${PORT:8080}
   servlet:
     session:
       cookie:
@@ -38,7 +38,6 @@ spring:
       datetime:
         write-dates-as-timestamps: false
 
-  # --- Змінено для використання H2 ---
   datasource:
     url: ${DB_URL:jdbc:h2:mem:carsdb;DB_CLOSE_DELAY=-1}
     driver-class-name: org.h2.Driver
@@ -54,7 +53,6 @@ spring:
       hibernate:
         format_sql: true
     open-in-view: false
-  # -----------------------------------
 
   liquibase:
     enabled: true
@@ -71,6 +69,10 @@ logging:
     org.hibernate.SQL: DEBUG
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%X{traceId:-NO_TRACE}] %-5level %logger{36} - %msg%n"
+
+gcp:
+  storage:
+    bucket-name: "cars-514510-storage"
 
 management:
   info:
