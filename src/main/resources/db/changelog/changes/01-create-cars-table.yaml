@@ -1,0 +1,71 @@
+databaseChangeLog:
+  - changeSet:
+      id: 01-create-cars-table
+      author: kateryna.astashenkova
+      changes:
+        - createTable:
+            tableName: cars
+            columns:
+              - column:
+                  name: car_id
+                  type: varchar(250)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: owner_email
+                  type: varchar(250)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: vehicle_identification_number
+                  type: varchar(17)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: model
+                  type: varchar(250)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: color
+                  type: varchar(250)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: car_year
+                  type: integer
+                  constraints:
+                    nullable: false
+              - column:
+                  name: license_plate
+                  type: varchar(250)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: fuel_type
+                  type: varchar(250)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: transmission
+                  type: varchar(250)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: base_fee
+                  type: numeric(12, 2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: rental_surcharge
+                  type: numeric(12, 2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: car_status
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
